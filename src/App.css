@@ -2,37 +2,445 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  margin: 0;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+
+  background: #f5f7fb;
+
+  color: #1f2937;
 }
 
-.App-header {
-  background-color: #282c34;
+a {
+  text-decoration: none;
+}
+
+
+/* =========================================
+   DASHBOARD
+========================================= */
+
+.dashboard-background {
   min-height: 100vh;
+  background: #f5f7fb;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.dashboard-navbar {
+  background: #111827;
+  padding: 16px 0;
+
+  box-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.navbar-brand {
+  font-size: 20px;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-icon {
+  width: 36px;
+  height: 36px;
+
+  display: inline-flex;
+
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+
+  border-radius: 10px;
+
+  background: #2563eb;
+
   color: white;
+
+  font-weight: 700;
 }
 
-.App-link {
-  color: #61dafb;
+
+/* =========================================
+   PAGE TITLE
+========================================= */
+
+.dashboard-title {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 32px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.dashboard-title h1 {
+  font-size: 32px;
+
+  font-weight: 700;
+
+  margin-bottom: 6px;
+}
+
+.dashboard-title p {
+  margin-bottom: 0;
+}
+
+
+/* =========================================
+   STAT CARDS
+========================================= */
+
+.stat-card {
+  background: white;
+
+  border-radius: 16px;
+
+  padding: 25px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  min-height: 140px;
+
+  border: 1px solid #e5e7eb;
+
+  box-shadow:
+    0 5px 20px rgba(0, 0, 0, 0.04);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.stat-icon {
+  width: 60px;
+  height: 60px;
+
+  border-radius: 15px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 26px;
+}
+
+.stat-icon.primary {
+  background: #e8f0ff;
+}
+
+.stat-icon.success {
+  background: #e8f8ef;
+}
+
+.stat-icon.warning {
+  background: #fff7df;
+}
+
+.stat-label {
+  color: #6b7280;
+
+  font-size: 14px;
+
+  margin-bottom: 5px;
+}
+
+.stat-card h2 {
+  margin: 0;
+
+  font-size: 30px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================
+   STUDENT CARD
+========================================= */
+
+.student-card {
+  background: white;
+
+  border-radius: 16px;
+
+  border: 1px solid #e5e7eb;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 5px 20px rgba(0, 0, 0, 0.04);
+}
+
+.student-card-header {
+  padding: 22px 25px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.student-card-header h4 {
+  margin: 0;
+
+  font-size: 19px;
+
+  font-weight: 700;
+}
+
+.student-card-header p {
+  margin: 4px 0 0;
+
+  color: #6b7280;
+
+  font-size: 14px;
+}
+
+
+/* =========================================
+   TABLE
+========================================= */
+
+.professional-table {
+  margin-bottom: 0;
+}
+
+.professional-table thead th {
+  background: #f9fafb;
+
+  color: #6b7280;
+
+  font-size: 12px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.5px;
+
+  padding: 16px;
+
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.professional-table tbody td {
+  padding: 17px 16px;
+
+  vertical-align: middle;
+
+  border-bottom: 1px solid #f0f1f3;
+}
+
+.professional-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.professional-table tbody tr:hover {
+  background: #fafbff;
+}
+
+
+/* =========================================
+   STUDENT NAME
+========================================= */
+
+.student-name {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+.avatar {
+  width: 40px;
+
+  height: 40px;
+
+  border-radius: 50%;
+
+  background: #e8f0ff;
+
+  color: #2563eb;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-weight: 700;
+}
+
+.student-id {
+  color: #6b7280;
+
+  font-weight: 600;
+}
+
+.course-badge {
+  background: #eef2ff;
+
+  color: #4338ca;
+
+  padding: 6px 12px;
+
+  border-radius: 20px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+.empty-state {
+  text-align: center;
+
+  padding: 70px 20px;
+
+  color: #6b7280;
+}
+
+.empty-state p {
+  margin-top: 12px;
+}
+
+.empty-icon {
+  font-size: 50px;
+
+  margin-bottom: 10px;
+}
+
+
+/* =========================================
+   ADD / EDIT PAGE
+========================================= */
+
+.page-background {
+  min-height: 100vh;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f5f7fb,
+      #eef4ff
+    );
+}
+
+.professional-card {
+  border: none;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 15px 45px rgba(0, 0, 0, 0.08);
+}
+
+.professional-header {
+  background: #111827;
+
+  color: white;
+
+  padding: 25px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.professional-header h3 {
+  font-weight: 700;
+}
+
+.professional-header p {
+  color: #9ca3af;
+}
+
+.form-label {
+  font-weight: 600;
+
+  color: #374151;
+}
+
+.form-control {
+  border-color: #d1d5db;
+
+  border-radius: 10px;
+}
+
+.form-control:focus {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .dashboard-title {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 20px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .dashboard-title h1 {
+    font-size: 26px;
   }
+
+  .student-card-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 15px;
+  }
+
 }
