@@ -1,0 +1,21 @@
+# Backend
+Backend/target/
+Backend/.classpath
+Backend/.project
+Backend/.settings/
+
+# Frontend
+Frontend/node_modules/
+Frontend/build/
+
+# Environment files
+.env
+.env.*
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
